@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프리미엄 홈케어 마사지 - 출장 마사지 전문</title>
+    <meta name="description" content="서울 강남 출장 마사지 전문. 최고의 테라피스트가 고객님의 집으로 찾아갑니다. 24시간 예약 가능.">
+    <meta name="keywords" content="출장 마사지, 홈케어 마사지, 강남 마사지, 서울 마사지, 스웨디시">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-spa"></i> 프리미엄 홈케어 마사지
+                </a>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item-active"><a href="index.html">홈</a></li>
+                    <li><a href="about.html">소개</a></li>
+                    <li><a href="regions.html">서비스 지역</a></li>
+                    <li><a href="blog.html">블로그</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">지역 선택 ▼</a>
+                        <ul class="dropdown-menu" id="regionDropdown">
+                            <!-- 动态加载地区 -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 部分 -->
+    <section class="hero" style="background-image: url('banner.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container">
+                <h1>프리미엄 출장 마사지 서비스</h1>
+                <p>전문 테라피스트가 고객님의 집으로 찾아갑니다</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">서비스 보기</a>
+                    <a href="#contact" class="btn btn-secondary">문의하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about-home">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>왜 우리를 선택해야 할까요?</h2>
+                    <p>10년 이상의 경력을 가진 전문 테라피스트들이 서울 전역에서 출장 서비스를 제공합니다. 안전하고 깨끗한 환경에서 최고의 휴식을 경험하세요.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 24시간 출장 서비스</li>
+                        <li><i class="fas fa-check"></i> 완전 비밀 보장</li>
+                        <li><i class="fas fa-check"></i> 전문 자격증 보유</li>
+                        <li><i class="fas fa-check"></i> 최신 위생 관리</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="about.jpg" alt="마사지 테라피스트" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务部分 -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">우리 서비스</h2>
+            <p class="section-subtitle">다양한 마사지 프로그램으로 완벽한 휴식을 제공합니다</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="service1.jpg" alt="클래식 마사지" loading="lazy">
+                    <div class="service-content">
+                        <h3>클래식 마사지</h3>
+                        <p>전통적인 스웨디시 마사지로 근육 이완과 혈액 순환을 촉진합니다.</p>
+                        <ul>
+                            <li>60분 / 90분 / 120분</li>
+                            <li>전신 림프 마사지</li>
+                            <li>아로마 오일 사용</li>
+                        </ul>
+                        <span class="price">60,000원 ~</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="service2.jpg" alt="스포츠 마사지" loading="lazy">
+                    <div class="service-content">
+                        <h3>스포츠 마사지</h3>
+                        <p>운동선수와 피로 누적된 분들을 위한 전문 깊은 조직 마사지입니다.</p>
+                        <ul>
+                            <li>근육 피로 완화</li>
+                            <li>관절 유연성 향상</li>
+                            <li>부상 예방</li>
+                        </ul>
+                        <span class="price">70,000원 ~</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="service3.jpg" alt="커플 마사지" loading="lazy">
+                    <div class="service-content">
+                        <h3>커플 마사지</h3>
+                        <p>연인과 함께하는 로맨틱한 마사지 프로그램. 특별한 시간을 선물하세요.</p>
+                        <ul>
+                            <li>동시 진행 가능</li>
+                            <li>프라이빗 공간</li>
+                            <li>특별 이벤트</li>
+                        </ul>
+                        <span class="price">120,000원 ~</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系部分 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">편리한 문의 방법</h2>
+            <p class="section-subtitle">언제든지 편하게 연락 주세요</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card phone-contact">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>전화 문의</h3>
+                        <p>010-XXXX-XXXX</p>
+                        <p>24시간 상담 가능</p>
+                        <a href="tel:010-XXXX-XXXX" class="btn btn-primary">지금 전화하기</a>
+                    </div>
+                </div>
+
+                <div class="contact-card kakao-contact">
+                    <div class="contact-icon">
+                        <i class="fab fa-comment-dots"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>카카오톡 문의</h3>
+                        <p>@KKMassage</p>
+                        <p>빠르고 편리한 상담</p>
+                        <a href="https://pf.kakao.com/_KKMassage" target="_blank" class="btn btn-secondary">카카오톡으로 문의</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google 地图 -->
+            <div class="map-container">
+                <h3>서비스 지역</h3>
+                <p>서울 강남구 중심으로 수도권 전역 서비스</p>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.011484484781!2d127.027917315005!3d37.49793377984056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2918e8e9b3b%3A0x9e84d9a2a2d7e0c6!2z7Yq157OE6rCR6re467O16rCAKOygnOydtOu1rOy2iA!5e0!3m2!1sko!2skr!4v1699999999999!5m2!1sko!2skr" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 10px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-spa"></i> 프리미엄 홈케어 마사지</h3>
+                    <p>수도권 전역 전문 출장 마사지 서비스</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="카카오톡"><i class="fab fa-comment-dots"></i></a>
+                        <a href="#" aria-label="인스타그램"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>빠른 메뉴</h4>
+                    <ul>
+                        <li><a href="index.html">홈</a></li>
+                        <li><a href="about.html">소개</a></li>
+                        <li><a href="regions.html">서비스 지역</a></li>
+                        <li><a href="blog.html">블로그</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>연락처 정보</h4>
+                    <p><i class="fas fa-phone"></i> 010-XXXX-XXXX</p>
+                    <p><i class="fab fa-comment-dots"></i> @KKMassage</p>
+                    <p><strong>영업시간:</strong> 24시간 운영</p>
+                    <p><strong>서비스 지역:</strong> 서울 전역 및 수도권</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 프리미엄 홈케어 마사지. All rights reserved. | 서울특별시 강남구</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 地区数据 (简化版，用于下拉菜单)
+        const regions = [
+            { name: '강남구', slug: 'gangnam' },
+            { name: '서초구', slug: 'seocho' },
+            { name: '송파구', slug: 'songpa' },
+            { name: '마포구', slug: 'mapo' },
+            { name: '용산구', slug: 'yongsan' },
+            { name: '영등포구', slug: 'yeongdeungpo' }
+            // 可以添加更多地区
+        ];
+
+        // 加载地区下拉菜单
+        function loadRegionDropdown() {
+            const dropdown = document.getElementById('regionDropdown');
+            regions.forEach(region => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `blog.html#${region.slug}`;
+                a.textContent = `${region.name} 정보`;
+                a.addEventListener('click', function(e) {
+                    // 可以添加跳转逻辑
+                });
+                li.appendChild(a);
+                dropdown.appendChild(li);
+            });
+        }
+
+        // 移动菜单切换
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            const menu = document.getElementById('navMenu');
+            const toggle = document.getElementById('mobileMenuToggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        });
+
+        // 下拉菜单
+        document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            const dropdown = this.parentElement;
+            dropdown.classList.toggle('active');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 页面加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRegionDropdown();
+        });
+
+        // 关闭移动菜单点击外部
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('navMenu');
+            const toggle = document.getElementById('mobileMenuToggle');
+            const dropdown = document.querySelector('.dropdown');
+            
+            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                menu.classList.remove('active');
+                toggle.classList.remove('active');
+            }
+            
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

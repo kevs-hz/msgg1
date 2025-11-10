@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역별 정보 - 프리미엄 홈케어 마사지</title>
+    <meta name="description" content="지역별 서비스 정보와 이용후기">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">프리미엄 홈케어 마사지</a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="about.html">소개</a></li>
+                    <li><a href="regions.html">서비스 지역</a></li>
+                    <li class="nav-item-active"><a href="blog.html">블로그</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">지역별 정보 ▼</a>
+                        <ul class="dropdown-menu" id="regionDropdown">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> / <span>블로그</span>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>지역별 서비스 안내 및 후기</h1>
+            <p>원하시는 지역을 선택하시면 관련 게시물로 이동합니다</p>
+        </div>
+    </section>
+
+    <section class="blog-list-section">
+        <div class="container">
+            <div id="posts">
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <h2>지금 바로 문의하세요</h2>
+            <p>전문 상담사가 친절하게 안내해드립니다</p>
+            <div class="contact-buttons">
+                <a href="tel:010-XXXX-XXXX" class="btn btn-primary">📞 전화 문의</a>
+                <a href="https://pf.kakao.com/_KKMassage" target="_blank" class="btn btn-secondary">💬 카카오톡 문의</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>프리미엄 홈케어 마사지</h3>
+                    <p>수도권 전역 출장 마사지 서비스</p>
+                </div>
+                <div class="footer-section">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="index.html">홈</a></li>
+                        <li><a href="about.html">소개</a></li>
+                        <li><a href="regions.html">서비스 지역</a></li>
+                        <li><a href="blog.html">블로그</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>연락처</h4>
+                    <p>전화: 010-XXXX-XXXX</p>
+                    <p>카카오톡: @KKMassage</p>
+                    <p>영업시간: 24시간 운영</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 프리미엄 홈케어 마사지. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const regions = [
+            { name: '강남구', slug: 'gangnam', excerpt: '강남역, 삼성역, 선릉역 일대 서비스 안내와 후기' },
+            { name: '서초구', slug: 'seocho', excerpt: '교대역, 강남역, 양재역 일대' },
+            { name: '송파구', slug: 'songpa', excerpt: '잠실역, 석촌역, 가락시장역' },
+            { name: '강동구', slug: 'gangdong', excerpt: '천호역, 강동역 일대' },
+            { name: '마포구', slug: 'mapo', excerpt: '홍대입구역, 신촌역 일대' },
+            { name: '용산구', slug: 'yongsan', excerpt: '이태원, 한남동, 용산역 일대' }
+        ];
+
+        function loadRegionDropdown() {
+            const dropdown = document.getElementById('regionDropdown');
+            regions.forEach(region => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${region.slug}`;
+                a.textContent = region.name;
+                li.appendChild(a);
+                dropdown.appendChild(li);
+            });
+        }
+
+        function loadPosts() {
+            const posts = document.getElementById('posts');
+            regions.forEach(region => {
+                const post = document.createElement('div');
+                post.className = 'post-card';
+                post.id = region.slug;
+                post.innerHTML = `
+                    <h3>${region.name}</h3>
+                    <p>${region.excerpt}</p>
+                    <a href="#" class="btn btn-primary">자세히 보기</a>
+                `;
+                posts.appendChild(post);
+            });
+        }
+
+        // 移动菜单、下拉菜单交互
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRegionDropdown();
+            loadPosts();
+
+            // 如果 URL 有 hash，滚动到对应文章
+            if (location.hash) {
+                const id = location.hash.replace('#','');
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
