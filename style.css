@@ -61,6 +61,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: space-between;
 }
 
 .logo {
@@ -964,3 +965,4 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: #1e3f7a;
 }
+
