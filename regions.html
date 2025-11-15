@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서비스 지역 - 프리미엄 홈케어 마사지</title>
+    <meta name="description" content="서울, 경기, 인천 등 수도권 전역에서 프리미엄 출장 마사지 서비스를 제공합니다.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">프리미엄 홈케어 마사지</a>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="about.html">소개</a></li>
+                    <li class="nav-item-active"><a href="regions.html">서비스 지역</a></li>
+                    <li><a href="blog.html">블로그</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">지역별 정보 ▼</a>
+                        <ul class="dropdown-menu" id="regionDropdown">
+                            <!-- 动态加载地区列表 -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> / <span>서비스 지역</span>
+        </div>
+    </div>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>서비스 지역</h1>
+            <p>수도권 전역에서 프리미엄 출장 마사지 서비스를 제공합니다</p>
+        </div>
+    </section>
+
+    <!-- 地区网格 -->
+    <section class="regions-section">
+        <div class="container">
+            <div class="regions-grid" id="regionsGrid">
+                <!-- 动态加载地区卡片 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式区域 -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2>지금 바로 문의하세요</h2>
+            <p>전문 상담사가 친절하게 안내해드립니다</p>
+            <div class="contact-buttons">
+                <a href="tel:010-XXXX-XXXX" class="btn btn-primary">
+                    <span class="icon">📞</span> 전화 문의
+                </a>
+                <a href="https://pf.kakao.com/_KKMassage" target="_blank" class="btn btn-secondary">
+                    <span class="icon">💬</span> 카카오톡 문의
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>프리미엄 홈케어 마사지</h3>
+                    <p>수도권 전역 출장 마사지 서비스</p>
+                </div>
+                <div class="footer-section">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="index.html">홈</a></li>
+                        <li><a href="about.html">소개</a></li>
+                        <li><a href="regions.html">서비스 지역</a></li>
+                        <li><a href="blog.html">블로그</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>연락처</h4>
+                    <p>전화: 010-XXXX-XXXX</p>
+                    <p>카카오톡: @KKMassage</p>
+                    <p>영업시간: 24시간 운영</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 프리미엄 홈케어 마사지. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 地区数据
+        const regions = [
+            { name: '강남구', slug: 'gangnam', description: '강남역, 삼성역, 선릉역 일대' },
+            { name: '서초구', slug: 'seocho', description: '교대역, 강남역, 양재역 일대' },
+            { name: '송파구', slug: 'songpa', description: '잠실역, 석촌역, 가락시장역 일대' },
+            { name: '강동구', slug: 'gangdong', description: '천호역, 강동역, 둔촌동 일대' },
+            { name: '마포구', slug: 'mapo', description: '홍대입구역, 신촌역, 마포역 일대' },
+            { name: '용산구', slug: 'yongsan', description: '이태원역, 용산역, 한남동 일대' },
+            { name: '영등포구', slug: 'yeongdeungpo', description: '영등포역, 여의도역, 문래역 일대' },
+            { name: '구로구', slug: 'guro', description: '구로디지털단지역, 신도림역 일대' },
+            { name: '관악구', slug: 'gwanak', description: '신림역, 봉천역, 서울대입구역 일대' },
+            { name: '강서구', slug: 'gangseo', description: '김포공항역, 발산역, 마곡나루역 일대' },
+            { name: '양천구', slug: 'yangcheon', description: '목동역, 오목교역, 신정네거리역 일대' },
+            { name: '종로구', slug: 'jongno', description: '광화문, 종로, 동대문 일대' },
+            { name: '중구', slug: 'junggu', description: '명동, 시청, 을지로 일대' },
+            { name: '성동구', slug: 'seongdong', description: '왕십리역, 성수역, 건대입구역 일대' },
+            { name: '광진구', slug: 'gwangjin', description: '건대입구역, 구의역, 강변역 일대' },
+            { name: '동대문구', slug: 'dongdaemun', description: '청량리역, 회기역, 신설동역 일대' },
+            { name: '중랑구', slug: 'jungnang', description: '상봉역, 면목역, 망우역 일대' },
+            { name: '성북구', slug: 'seongbuk', description: '성신여대입구역, 한성대입구역 일대' },
+            { name: '강북구', slug: 'gangbuk', description: '수유역, 미아역, 미아삼거리역 일대' },
+            { name: '도봉구', slug: 'dobong', description: '쌍문역, 창동역, 방학역 일대' },
+            { name: '노원구', slug: 'nowon', description: '노원역, 상계역, 중계역 일대' },
+            { name: '은평구', slug: 'eunpyeong', description: '연신내역, 불광역, 응암역 일대' },
+            { name: '서대문구', slug: 'seodaemun', description: '신촌역, 이대역, 홍제역 일대' },
+            { name: '동작구', slug: 'dongjak', description: '사당역, 이수역, 노량진역 일대' },
+            { name: '금천구', slug: 'geumcheon', description: '가산디지털단지역, 독산역 일대' }
+        ];
+
+        // 加载导航下拉菜单
+        function loadRegionDropdown() {
+            const dropdown = document.getElementById('regionDropdown');
+            regions.forEach(region => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `blog.html#${region.slug}`;
+                a.textContent = region.name;
+                li.appendChild(a);
+                dropdown.appendChild(li);
+            });
+        }
+
+        // 加载地区网格
+        function loadRegionsGrid() {
+            const grid = document.getElementById('regionsGrid');
+            regions.forEach(region => {
+                const card = document.createElement('div');
+                card.className = 'region-card';
+                card.innerHTML = `
+                    <h3>${region.name}</h3>
+                    <p>${region.description}</p>
+                    <a href="blog.html#${region.slug}" class="region-link">지역 정보 보기 →</a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // 移动菜单切换
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // 下拉菜单交互
+        document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        });
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRegionDropdown();
+            loadRegionsGrid();
+        });
+    </script>
+</body>
+</html>
